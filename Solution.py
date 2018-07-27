@@ -43,22 +43,25 @@ class RobotRun(object):
         self.GetAttributes = GetAttributes
     
     def RunRobotRun(self):
-        if self.OrderValue() != 'PLACE':
-            return InputValue
-        elif ORDER == 'PLACE':
-            X = GetInputValue.X
-            Y = GetInputValue.Y
-            F = GetInputValue.F
-            if ORDER == 'MOVE'
+        while inputValue != None
+            if self.OrderValue() != 'PLACE':
+                return InputValue
+                continue
+            elif ORDER == 'PLACE':
+                X = GetInputValue.X
+                Y = GetInputValue.Y
+                F = GetInputValue.F
+                continue
+            elif ORDER == 'MOVE'
                 return X = X.MakeMove(), Y = Y.MakeMove()
                 continue
-            if ORDER == 'RIGHT':
+            elif ORDER == 'RIGHT':
                 return F = F.TurnRight()
                 continue
-            if ORDER == 'LEFT':
+            elif ORDER == 'LEFT':
                 return F = F.TurnLeft()
                 continue
-            if ORDER == 'REPORT':
+            elif ORDER == 'REPORT':
                 print(X, Y, F)
            
         
