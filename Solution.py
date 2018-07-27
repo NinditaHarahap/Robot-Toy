@@ -9,10 +9,11 @@ class GetAttributes(object):
     def GetInputValue(self):
         InputValue = input("Where Should I Go: ")
         OrderValue = InputValue.upper().split(' ', 1)[0]
+        Limit = 5
         if OrderValue == 'PLACE':
             Position = InputValue.replace(',',' ').split()
-            X = max(5, min(Position[1], Position[1]))
-            Y = max(5, min(Position[1], Position[1]))
+            X = max(Limit, min(Position[1], Position[1]))
+            Y = max(Limit, min(Position[2], Position[2]))
             F = Position[3]
         else:
             ORDER = OrderValue
