@@ -48,21 +48,21 @@ class RobotRun(object):
             if self.OrderValue() != 'PLACE':
                 return InputValue
                 continue
-            elif ORDER == 'PLACE':
+            if ORDER == 'PLACE':
                 X = GetInputValue.X
                 Y = GetInputValue.Y
                 F = GetInputValue.F
                 continue
-            elif ORDER == 'MOVE'
+            if ORDER == 'MOVE'
                 return X = X.MakeMove(), Y = Y.MakeMove()
                 continue
-            elif ORDER == 'RIGHT':
+            if ORDER == 'RIGHT':
                 return F = F.TurnRight()
                 continue
-            elif ORDER == 'LEFT':
+            if ORDER == 'LEFT':
                 return F = F.TurnLeft()
                 continue
-            elif ORDER == 'REPORT':
+            if ORDER == 'REPORT':
                 print(X, Y, F)
            
         
