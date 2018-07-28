@@ -19,10 +19,20 @@ class GetAttributes(object):
             ORDER = OrderValue
 
     def MakeMove(self):
-        {'NORTH':Y+=1, X=X, 
-         'EAST':X+=1, Y=Y,
-         'WEST':X-=1, Y=Y,
-         'SOUTH':Y-=1, X=X}
+        if F == 'NORTH':
+            X = X
+            Y += 1 
+        elif F == 'EAST':
+            X += 1
+            Y = Y
+        elif F == 'WEST':
+            X -= 1
+            Y
+        elif F == 'SOUTH':
+            X = X
+            Y -= 1
+        else:
+            F = F
 
     def TurnRight(self):
         {'NORTH':'EAST', 
@@ -44,27 +54,20 @@ class RobotRun(object):
         self.GetAttributes = GetAttributes
     
     def RunRobotRun(self):
-        while inputValue != None
-            if self.OrderValue() != 'PLACE':
-                return InputValue
-                continue
-            if ORDER == 'PLACE':
-                X = GetInputValue.X
-                Y = GetInputValue.Y
-                F = GetInputValue.F
-                continue
-            if ORDER == 'MOVE'
-                return X = X.MakeMove(), Y = Y.MakeMove()
-                continue
-            if ORDER == 'RIGHT':
-                return F = F.TurnRight()
-                continue
-            if ORDER == 'LEFT':
-                return F = F.TurnLeft()
-                continue
-            if ORDER == 'REPORT':
-                print(X, Y, F)
-           
-        
-if __name__ == '__main__':
-    main()
+        for X in range(5):
+            for Y in range(5):
+                if self.OrderValue() != 'PLACE':
+                    return InputValue
+                if ORDER == 'PLACE':
+                    X = X.GetInputValue()
+                    Y = Y.GetInputValue()
+                    F = F.GetInputValue()
+                if ORDER == 'MOVE':
+                    X = X.MakeMove()
+                    Y = Y.MakeMove()
+                if ORDER == 'RIGHT':
+                    F = F.TurnRight()
+                if ORDER == 'LEFT':
+                    F = F.TurnLeft()
+                if ORDER == 'REPORT':
+                    print(X, Y, F)
