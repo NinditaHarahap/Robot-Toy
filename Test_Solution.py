@@ -1,4 +1,4 @@
-import Solution
+from Solution import GetAttributes, RobotRun
 
 def test_input():
   InputValue = "PLACE 0,0,NORTH"
