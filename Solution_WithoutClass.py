@@ -33,9 +33,6 @@ while True:
 		if ORDER == 'PLACE':
 			X = clamp(int(X), minn, maxn)
 			Y = clamp(int(Y), minn, maxn)
-		print(X)
-		print(Y)
-		print(F)
 	if len(InputValue) <= limit:
 		ORDER = InputValue.strip().upper()
 		if ORDER == 'LEFT':
