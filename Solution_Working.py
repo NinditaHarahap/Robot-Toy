@@ -6,7 +6,7 @@ def clamp(n, minn, maxn):
 		return maxn
 	else:
 		return n
-
+	
 def MakeMove(X, Y, F):
     if F == 'NORTH':
         Y = clamp(Y + 1, minn, maxn) 
@@ -32,17 +32,19 @@ limit = max(len(Or) for Or in OrderList)+1
 
 
 #Operation          
-print('Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this command first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location')
+print("Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this command first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location")
 while True:
-	InputValue = input('What Do You Want To Do: ').upper()
+	InputValue = input("What Do You Want To Do: ").upper()
 	if InputValue == 'QUIT':
 		break
 	if len(InputValue) >= limit:
 		ORDER, X, Y, F = InputValue.strip().replace(',',' ').split()
 		if F in Direction:
-			if ORDER == 'PLACE':
+			if ORDER == 'PLACE' and X.isnumeric() and Y.isnumeric():
 				X = clamp(int(X), minn, maxn)
 				Y = clamp(int(Y), minn, maxn)
+			else:
+				print(ErrorMessage)
 		else: 
 			print(ErrorMessage)
 	if len(InputValue) <= limit:
