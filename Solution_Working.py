@@ -31,9 +31,9 @@ def MakeMove(X, Y, F):
     return X, Y, F
           
 #Operations
-print("Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location")
+print('Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location')
 while True:
-	InputValue = input("What Do You Want To Do: ").upper()
+	InputValue = input('What Do You Want To Do: ').upper()
 	if InputValue == 'QUIT':
 		break
 	if len(InputValue) >= limit:
