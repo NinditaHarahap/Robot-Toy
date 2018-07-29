@@ -1,27 +1,28 @@
-from Solution import GetAttributes, RobotRun
+import unittest
+from Solution_Working import *
 
-def test_input():
-  InputValue = "PLACE 0,0,NORTH"
-  OrderValue = "MOVE"
-  OrderValue = "REPORT"
-  assert print(X, Y, F) == '0,1,NORTH'
+class Test_Class(unittest.TestCase):
 
-  InputValue = "PLACE 0,0,NORTH"
-  OrderValue = "LEFT"
-  OrderValue = "REPORT"
-  assert print(X, Y, F) == '0,0,WEST'
+  def test_function_1(self):
+    Solution_Working.input = lambda i : "PLACE 0, 0, NORTH"
+    Solution_Working.input = lambda i : "MOVE"
+    Solution_Working.input = lambda i : "REPORT"
+    output = Solution_Working.RunRobotRun()
+    assert output == "Your current coordinate is: 1 0 NORTH"
 
-  InputValue = "PLACE 0,0,NORTH"
-  OrderValue = "LEFT"
-  OrderValue = "REPORT"
-  assert print(X, Y, F) == '0,0,WEST'
-
-  InputValue = "PLACE 1,2,EAST"
-  OrderValue = "MOVE"
-  OrderValue = "MOVE"
-  OrderValue = "LEFT"
-  OrderValue = "MOVE"
-  OrderValue = "REPORT"
-  assert print(X, Y, F) == '3,3,NORTH'
-
+  def test_function_2(self):
+    Solution_Working.input = lambda i : "PLACE 0, 0, NORTH"
+    Solution_Working.input = lambda i : "LEFT"
+    Solution_Working.input = lambda i : "REPORT"
+    output = Solution_Working.RunRobotRun()
+    assert output == "Your current coordinate is: 0 0 WEST"
   
+  def test_function_3(self):
+    Solution_Working.input = lambda i : "PLACE 1, 2, EAST"
+    Solution_Working.input = lambda i : "MOVE"
+    Solution_Working.input = lambda i : "MOVE"
+    Solution_Working.input = lambda i : "LEFT"
+    Solution_Working.input = lambda i : "MOVE"
+    Solution_Working.input = lambda i : "REPORT"
+    output = Solution_Working.RunRobotRun()
+    assert output == "Your current coordinate is: 3 3 NORTH"
