@@ -27,11 +27,11 @@ def MakeMove(X, Y, F):
     elif F == 'SOUTH':
         Y = clamp(Y - 1, minn, maxn)
     else:
-    	print('Hmmm.. Did you have a typo on your command? Check again please.')
+    	print(ErrorMessage)
     return X, Y, F
           
 #Operations
-print('Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location')
+print('Your command options: \nPLACE X, Y, (NORTH/EAST/SOUTH/WEST) --> Use this command first\nRIGHT\nLEFT\nMOVE\nREPORT --> Get your current location')
 while True:
 	InputValue = input('What Do You Want To Do: ').upper()
 	if InputValue == 'QUIT':
