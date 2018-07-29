@@ -56,4 +56,4 @@ ErrorMessage = 'Hmmm.. Did you have a typo on your command? Check again please.'
             if ORDER == 'MOVE':
                 X, Y, F = MakeMove(X, Y, F)
             if ORDER == 'REPORT':
-                print('Your current coordinate is: ',X,',',Y,',',F)
+                print('Your current coordinate is: ',X,Y,F)
