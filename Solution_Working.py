@@ -8,17 +8,17 @@ def clamp(n, minn, maxn):
 		return n
 	
 def MakeMove(X, Y, F):
-	if F == 'NORTH':
-        	Y = clamp(Y + 1, minn, maxn) 
-    	elif F == 'EAST':
-        	X = clamp(X + 1, minn, maxn)
-    	elif F == 'WEST':
-        	X = clamp(X - 1, minn, maxn)
-    	elif F == 'SOUTH':
-        	Y = clamp(Y - 1, minn, maxn)
-    	else:
-    		print(ErrorMessage)
-    	return X, Y, F
+    if F == 'NORTH':
+        Y = clamp(Y + 1, minn, maxn) 
+    elif F == 'EAST':
+        X = clamp(X + 1, minn, maxn)
+    elif F == 'WEST':
+        X = clamp(X - 1, minn, maxn)
+    elif F == 'SOUTH':
+        Y = clamp(Y - 1, minn, maxn)
+    else:
+    	print(ErrorMessage)
+    return X, Y, F
 
 #Lists and Dictionaries
 OrderList = ('LEFT','RIGHT','MOVE','REPORT')
@@ -39,12 +39,9 @@ while True:
 		break
 	if len(InputValue) >= limit:
 		ORDER, X, Y, F = InputValue.strip().replace(',',' ').split()
-		if F in Direction:
-			if ORDER == 'PLACE' and X.isnumeric() and Y.isnumeric():
-				X = clamp(int(X), minn, maxn)
-				Y = clamp(int(Y), minn, maxn)
-			else:
-				print(ErrorMessage)
+		if ORDER == 'PLACE' and F in Direction and X.isnumeric() and Y.isnumeric():
+			X = clamp(int(X), minn, maxn)
+			Y = clamp(int(Y), minn, maxn)
 		else: 
 			print(ErrorMessage)
 	if len(InputValue) <= limit:
