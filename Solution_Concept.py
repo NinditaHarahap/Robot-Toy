@@ -1,11 +1,10 @@
 class GetAttributes(object):
-    def __init__(self, PLACE, X, Y, F, ORDER):
-        self.PLACE = PLACE
+    def __init__(self, ORDER, X, Y, F):
+        self.ORDER = ORDER
         self.X = X
         self.Y = Y
         self.F = F
-        self.ORDER = ORDER
-    
+        
     def clamp(n, minn, maxn):
         if n < minn:
             return minn
@@ -25,12 +24,15 @@ class GetAttributes(object):
             Y = clamp(Y - 1, minn, maxn)
         return X, Y, F
 
-    TurnRight = {'NORTH':'EAST', 'EAST':'SOUTH', 'WEST':'NORTH', 'SOUTH':'WEST'}
-    TurnLeft = {'NORTH':'WEST', 'EAST':'NORTH', 'WEST':'SOUTH', 'SOUTH':'EAST'}
-          
-class RobotRun(object):
-    def __init__(self, GetAttributes):
-        self.GetAttributes = GetAttributes
+#Lists and Dictionaries
+minn = 0 
+maxn = 5
+limit = 7
+OrderList = ('LEFT','RIGHT','MOVE','REPORT')
+Direction = ('NORTH','EAST','WEST','SOUTH')
+TurnRight = {'NORTH':'EAST', 'EAST':'SOUTH', 'WEST':'NORTH', 'SOUTH':'WEST'}
+TurnLeft = {'NORTH':'WEST', 'EAST':'NORTH', 'WEST':'SOUTH', 'SOUTH':'EAST'}
+ErrorMessage = 'Hmmm.. Did you have a typo on your command? Check again please.'
     
     def RunRobotRun(self):
         while True:
