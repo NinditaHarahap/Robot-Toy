@@ -1,3 +1,4 @@
+#Limit Board Area
 def clamp(n, minn, maxn):
 	if n < minn:
 		return minn
@@ -5,7 +6,8 @@ def clamp(n, minn, maxn):
 		return maxn
 	else:
 		return n
-
+	
+#Dictionary of Movement
 TurnRight = {'NORTH':'EAST', 'EAST':'SOUTH', 'WEST':'NORTH', 'SOUTH':'WEST'}
 TurnLeft = {'NORTH':'WEST', 'EAST':'NORTH', 'WEST':'SOUTH', 'SOUTH':'EAST'}
 
@@ -20,7 +22,7 @@ def MakeMove(X, Y, F):
         Y = clamp(Y - 1, minn, maxn)
     return X, Y, F
           
-
+#Operations
 while True:
 	InputValue = input("What Do You Want To Do: ").upper()
 	minn = 0
@@ -42,4 +44,4 @@ while True:
 		if ORDER == 'MOVE':
 			X, Y, F = MakeMove(X, Y, F)
 		if ORDER == 'REPORT':
-			print('Your current coordinate is: ',X,',',Y,',',F)
+			print('Your current coordinate is: ',X,Y,F)
